@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std ;
 
@@ -6,14 +5,15 @@ using namespace std ;
 #define vi vector<int>
 #define nline "\n"
 #define inf 1e18
+#define iinf INT_MAX
 #define print cout 
 #define eb emplace_back
 #define vb vector<bool>
+#define vll vector<ll> 
 #define vvi vector<vector<int>>
 #define vvb vector<vector<bool>>
 #define vc vector<char>
 #define vvc vector<vector<char>>
-#define modulo 1'000'000'007
 #define nline "\n"
 #define pb push_back
 #define ppb pop_back
@@ -24,6 +24,7 @@ using namespace std ;
 #define set_bits __builtin_popcountll
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
 
 #ifndef ONLINE_JUDGE
 #define debug(x) cerr << #x <<" "; _print(x); cerr << endl;
@@ -31,9 +32,17 @@ using namespace std ;
 #define debug(x)
 #endif
 
+#ifndef ONLINE_JUDGE
+#define working cerr << "Working here.." << "\n" ;
+#else
+#define working 
+#endif
+
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double lld;
+typedef pair<int,int> pii;
+typedef pair<ll,ll> pll;
 
 void _print(ll t) {cerr << t;}
 void _print(int t) {cerr << t;}
@@ -48,6 +57,13 @@ template <class T> void _print(vector <T> v);
 template <class T> void _print(set <T> v);
 template <class T, class V> void _print(map <T, V> v);
 template <class T> void _print(multiset <T> v);
+template <class T> void _print(stack<T> v);
+template <class T> void _print(list<T> v);
+template <class T> void _print(priority_queue<T> v);
+
+template <class T> void _print(priority_queue<T> v){cerr<<"{ ";while(!v.empty()){_print(v.top()); cerr<<" "; v.pop();} cerr<<" }";}
+template <class T> void _print(stack<T> v){cerr<< "[" ; while(!v.empty()){_print(v.top()); cerr<< " " ; v.pop();} cerr<< "]" ;}
+template <class T> void _print(list<T> v) {cerr << "["; for(auto i: v){_print(i);cerr << " " ;} cerr<< "]";}
 template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.fs); cerr << ","; _print(p.sc); cerr << "}";}
 template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
@@ -55,25 +71,32 @@ template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_pr
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
+ll power(ll a, ll b){ll res = 1; while(b){if(b&1){res *= a;} b /=2; a*=a;} return res ;}
+ll mod_pow(ll a, ll b, ll mod){ll res = 1; while(b){if(b&1){res = (res*a)%mod;} b /=2; a=(a*a)%mod;} return (res%mod) ;}
+void usaco (string filename = ""){if(sz(filename)){ freopen((filename+ ".in").c_str() , "r", stdin); freopen((filename+ ".out").c_str() , "w", stdout); } }
+/*--------------------------------------------------------------------------------------------------------------------------------*/
 
-bool descending (int a , int b){
-   return a>b ;
+void solve(){
+   // Check for the testcases !!
+
+
+
 }
+
 
 int main (){
    #ifndef ONLINE_JUDGE
       freopen("error.txt", "w", stderr);
    #endif
 
+   
    fastio();
- 
-   int test =1 ;
+   
+   int test = 1, testcase = 1 ;
    cin >> test ;
    
-   while(test--){
-      
-
-   }
- 
-    
+   while(test --){
+      // cout << "Case #" << testcase++ << ": ";
+      solve () ;
+   } 
 }

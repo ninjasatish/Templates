@@ -1,5 +1,20 @@
+/* 
+   Name       = Satish Kumar Prajapati
+   Codeforces = NinjaSenpai
+   CodeChef   = ninja_satish
+   AtCoder    = NinjaSatish
+*/
+
 #include <bits/stdc++.h>
 using namespace std ;
+
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+
+template <class T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
 
 #define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define vi vector<int>
@@ -16,7 +31,9 @@ using namespace std ;
 #define vvc vector<vector<char>>
 #define nline "\n"
 #define pb push_back
+#define pf push_front
 #define ppb pop_back
+#define ppf pop_front
 #define mp make_pair
 #define fs first
 #define sc second
@@ -60,7 +77,9 @@ template <class T> void _print(multiset <T> v);
 template <class T> void _print(stack<T> v);
 template <class T> void _print(list<T> v);
 template <class T> void _print(priority_queue<T> v);
+template <class T> void _print(ordered_set<T> st);
 
+template <class T> void _print(ordered_set<T> st){cerr<<"{ ";for(auto i: st){cerr<<i<<" ";} cerr<<"}";}
 template <class T> void _print(priority_queue<T> v){cerr<<"{ ";while(!v.empty()){_print(v.top()); cerr<<" "; v.pop();} cerr<<" }";}
 template <class T> void _print(stack<T> v){cerr<< "[" ; while(!v.empty()){_print(v.top()); cerr<< " " ; v.pop();} cerr<< "]" ;}
 template <class T> void _print(list<T> v) {cerr << "["; for(auto i: v){_print(i);cerr << " " ;} cerr<< "]";}
@@ -76,8 +95,15 @@ ll mod_pow(ll a, ll b, ll mod){ll res = 1; while(b){if(b&1){res = (res*a)%mod;} 
 void usaco (string filename = ""){if(sz(filename)){ freopen((filename+ ".in").c_str() , "r", stdin); freopen((filename+ ".out").c_str() , "w", stdout); } }
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 
+ll N = 5e5 ;
+ll mod = 1e9 + 7 ;
+
+
+
 void solve(){
    // Check for the testcases !!
+
+
 
 
 
@@ -88,12 +114,12 @@ int main (){
    #ifndef ONLINE_JUDGE
       freopen("error.txt", "w", stderr);
    #endif
-
+   cout << setprecision(15) << fixed;
    
    fastio();
    
    int test = 1, testcase = 1 ;
-   cin >> test ;
+   // cin >> test ;
    
    while(test --){
       // cout << "Case #" << testcase++ << ": ";

@@ -114,7 +114,9 @@ int main (){
    #ifndef ONLINE_JUDGE
       freopen("error.txt", "w", stderr);
    #endif
+
    cout << setprecision(15) << fixed;
+   cerr << setprecision(7) << fixed;
    
    fastio();
    
@@ -125,4 +127,6 @@ int main (){
       // cout << "Case #" << testcase++ << ": ";
       solve () ;
    } 
+
+   cerr << "\nTime elapsed : " <<  (lld)clock() / CLOCKS_PER_SEC << nline;
 }

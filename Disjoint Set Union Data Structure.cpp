@@ -1,31 +1,31 @@
 struct dsu {
-   vector<int> v;
-   int components ;
-   dsu (int n ){
-      components = n;
-      v = vector<int>(n+1, -1);
+   // #define ll long long int
+   
+   vector<ll> par , siz ;
+   ll components ;
+
+   dsu (ll n){
+      components = n ;
+      par.assign(n + 1 , 0); siz.assign(n + 1, 1);
+      for(ll i = 0; i <= n; ++i) par[i] = i ;
    }
 
-   int get(int x){
-      return (v[x] < 0 ? x : v[x] = get(v[x]));
+   ll get(ll x){
+      return x == par[x] ? x : par[x] = get(par[x]) ;
    }
 
-   bool unite(int x , int y){
-      x = get(x) ; y = get(y) ;
-      if(x == y) return false;
-
-      if(v[x] > v[y]) swap(x, y);
-
-      v[x] += v[y];
-      v[y] = x; 
+   bool unite(ll x , ll y){
+      x = get(x); y = get(y);
+      if(x == y) return 0 ;
+      if(siz[x] > siz[y]) swap(x , y);
+      par[x] = y ;
+      siz[y] += siz[x];
       components --;
-      return true;
+      return 1 ;
    }
 
-   bool same_set(int x, int y){
-      return get(x) == get(y);
+   ll getsize(ll x){
+      return siz[get(x)] ;
    }
-   int size (int x){
-      return -(v[get(x)]);
-   }
+
 };

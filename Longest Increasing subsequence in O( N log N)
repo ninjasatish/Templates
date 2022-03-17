@@ -1,0 +1,43 @@
+vector<ll> lengthOfLIS(vector<ll> &a){
+    ll n = sz(a) ;
+    vector<ll> x, vector<ll> temp(n, 0) ;
+    
+    for(ll i = 0 ; i < n; ++i){
+        if(x.empty()){
+            x.pb(a[i]);
+            temp[i]=sz(x);
+            continue;
+        }
+        int pos=lower_bound(all(x), a[i])-x.begin();
+        if(pos==sz(x)){
+            x.pb(a[i]);
+        }
+        else{
+            x[pos]=a[i];
+        }
+        temp[i]=sz(x);
+    }
+    return temp;
+}
+
+vector<ll> lengthOfLDS(vector<ll> &a){ // Its the same as LIS , but you need to multiply all the elements with -1  (negate all the elements)
+    ll n = sz(a) ;
+    vector<ll> x, vector<ll> temp(n, 0) ;
+    
+    for(ll i = 0 ; i < n; ++i){
+        if(x.empty()){
+            x.pb(a[i]);
+            temp[i]=sz(x);
+            continue;
+        }
+        int pos=lower_bound(all(x), a[i])-x.begin();
+        if(pos==sz(x)){
+            x.pb(a[i]);
+        }
+        else{
+            x[pos]=a[i];
+        }
+        temp[i]=sz(x);
+    }
+    return temp;
+}

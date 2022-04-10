@@ -1,3 +1,6 @@
+/* Note that the formula for merging changes according to the need of the problem , so for example you wanna add v to a range [L , R] and find the minimum then 
+   the mergining will be v[x] += lazy[x]  and  v[x] = min(v[ 2 * x + 1]  , v[2 * x + 2]) 
+*/
 
 struct seg{
    vll v, lazy;

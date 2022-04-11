@@ -6,7 +6,7 @@ struct seg{
    vll v, lazy;
    int sz = 1;
  
-   seg(int len, int val ){
+   seg(int len){
       while(sz <= len) sz *= 2;
       v.assign(4 * sz , 0ll);
       lazy.assign(4 * sz, 0ll);

@@ -124,15 +124,7 @@ int rand(int l, int r){
 
 
 void solve() {
-   ll n = rand(1, 20);
-   ll k = rand(1, n);
-
-   cout << n << ' ' << k << endl;
-
-   for(int i = 0 ; i < n; i ++){
-      cout << rand(1, 1e5) << ' ' ;
-   }
-   cout << endl;
+   
 
 
 }
